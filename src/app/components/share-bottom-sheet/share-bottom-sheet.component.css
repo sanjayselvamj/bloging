@@ -1,0 +1,43 @@
+.share-bottom-sheet {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: space-around; /* Space items evenly */
+  padding: 10px;
+  background-color: #f8f9fa; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.share-card {
+  display: flex;
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center; /* Center items */
+  margin: 10px; /* Add margin for spacing */
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Text color */
+  transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.share-card a {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center align */
+}
+
+.share-card img {
+  width: 40px; /* Set a fixed width for icons */
+  height: 40px; /* Set a fixed height for icons */
+  margin-bottom: 5px; /* Space between icon and text */
+}
+
+.share-card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .share-bottom-sheet {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center items */
+  }
+}

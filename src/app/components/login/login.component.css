@@ -1,0 +1,84 @@
+.login-container {
+  background-image: url('../../../assets/img/blog.jpg'); /* Update with your image path */
+  background-size: cover;
+  background-position: center;
+ /* Full viewport height */
+
+  /* Center the login card */
+
+  align-items: center;
+  justify-content: center;
+
+  /* Prevent scrolling */
+  overflow: hidden;
+}
+
+.login-card {
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+
+  /* Make the card slightly transparent */
+  background: rgba(255, 255, 255, 0.1); /* Adjust opacity as needed */
+  backdrop-filter: blur(5px); /* Optional: For a frosted glass effect */
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  margin-left: 140px;
+
+  /* Add shadow and hover effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Ensure the card is responsive */
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    max-width: 90%; /* Adjust width for smaller screens */
+    margin-left: 20px;
+  }
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.login-btn {
+  width: 100%;
+
+  border: none;
+  &:hover {
+    background-color: #c2c9d0;
+  }
+}
+
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.signup-link .btn-link,
+.help-link .btn-link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.signup-link .btn-link:hover,
+.help-link .btn-link:hover {
+  color: #007bff;
+  text-decoration: underline;
+}

@@ -1,0 +1,129 @@
+<div class="container my-5">
+  <!-- Login Help Section -->
+  <div *ngIf="showLoginHelp" class="mb-5">
+    <h3 class="text-center mb-4">Login Help Section</h3>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="card shadow-lg">
+          <div class="card-header text-center">
+            <h4>Login Process Overview</h4>
+          </div>
+          <div class="card-body">
+            <ol class="list-unstyled">
+              <li class="mb-3">
+                <strong>User Enters Login Details</strong>
+                <p>The user enters their <em>username</em> (at least 4 characters) and <em>password</em> (at least 6 characters) in the login form. The form ensures both fields are filled before submission.</p>
+              </li>
+              <li class="mb-3">
+                <strong>Submit the Form</strong>
+                <p>The user clicks the "Login" button, and the app collects the entered username and password.</p>
+              </li>
+              <li class="mb-3">
+                <strong>Authentication Request</strong>
+                <p>The app sends the credentials to the backend, which checks for validity.</p>
+              </li>
+              <li class="mb-3">
+                <strong>Handle the Response</strong>
+                <p>On success, the backend sends a token or <code>userId</code> to the frontend. The app stores this data in <code>localStorage</code> for session management.</p>
+              </li>
+              <li class="mb-3">
+                <strong>Navigate to Home Page</strong>
+                <p>After successful login, the user is redirected to the home page automatically.</p>
+              </li>
+              <li class="mb-3">
+                <strong>Login Failure</strong>
+                <p>If the login fails, an error message is displayed, prompting the user to try again.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registration Help Section -->
+  <div *ngIf="showRegistrationHelp" class="mb-5">
+    <h3 class="text-center mb-4">Registration Help Section</h3>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="card shadow-lg">
+          <div class="card-header text-center">
+            <h4>New User Registration Process</h4>
+          </div>
+          <div class="card-body">
+            <ol class="list-unstyled">
+              <li class="mb-3">
+                <strong>User Enters Registration Details</strong>
+                <p>The user fills in details like <em>username</em> (at least 4 characters) and <em>password</em> (at least 6 characters) in the registration form.</p>
+              </li>
+              <li class="mb-3">
+                <strong>Submit the Registration Form</strong>
+                <p>The user clicks "Sign Up", and the form data is sent to the backend.</p>
+              </li>
+              <li class="mb-3">
+                <strong>Check for Existing User</strong>
+                <p>The backend verifies whether the username already exists in the system. If it does, registration fails.</p>
+              </li>
+              <li class="mb-3">
+                <strong>Handle the Response</strong>
+                <p>On success, the backend creates a new user account and confirms registration.</p>
+              </li>
+              <li class="mb-3">
+                <strong>Navigate to Login Page</strong>
+                <p>After successful registration, the user is automatically redirected to the login page.</p>
+              </li>
+              <li class="mb-3">
+                <strong>Registration Failure</strong>
+                <p>If registration fails, an error message is shown, and the user can attempt to register again.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="explanation-section py-5">
+    <div class="container">
+      <h2>Creating a Post</h2>
+      <p>To create a new post, fill in the <strong>Title</strong> and <strong>Content</strong> fields in the post creation form.</p>
+      <p>Once you've entered your details, click the <strong>"Create Post"</strong> button. Your post will then be saved and displayed below the form.</p>
+
+      <h2>Commenting on Posts</h2>
+      <p>To comment on a post, locate the post you want to comment on. Underneath the post content, you will find an input field labeled <strong>"Add a comment."</strong></p>
+      <p>Type your comment in the field and click the <strong>"Comment"</strong> button. Your comment will be added to the post and visible to other users.</p>
+
+      <h2>Deleting a Post</h2>
+      <p>If you wish to delete a post that you have created, click the <strong>"Delete Post"</strong> button located below the post. A confirmation may be required to ensure you want to proceed with the deletion.</p>
+      <p>Once deleted, the post will no longer be visible to you or other users.</p>
+
+      <h2>Sharing a Post</h2>
+      <p>To share a post, click the <strong>"Share Post"</strong> button beneath the post. This feature allows you to copy a link to the post or share it directly through your preferred social media platforms.</p>
+      <p>Sharing helps to spread the word about your thoughts and contributions!</p>
+    </div>
+  </section>
+
+  <section class="explanation-section py-5">
+    <div class="container">
+      <h2>Commenting on a Post</h2>
+      <p>To add a comment to a post, navigate to the post you wish to comment on.</p>
+      <p>In the <strong>"Add a Comment"</strong> section below the post content, enter your comment in the provided text box.</p>
+      <p>After writing your comment, click the <strong>"Comment"</strong> button to submit it. Your comment will now appear under the post for others to see!</p>
+
+      <h2>Deleting Your Comment</h2>
+      <p>If you decide to delete your comment, find the comment you want to remove.</p>
+      <p>Next to your comment, you will see a <strong>"Delete"</strong> button. Click this button to remove your comment.</p>
+      <p>You may be prompted to confirm the deletion. Once confirmed, your comment will be permanently removed from the post.</p>
+
+      <h2>Deleting a Post</h2>
+      <p>To delete a post you have created, locate the post on your profile or the main feed.</p>
+      <p>Below the post, click the <strong>"Delete Post"</strong> button. A confirmation message will appear asking if you're sure you want to delete the post.</p>
+      <p>If you confirm, the post will be removed from the site and will no longer be visible to anyone.</p>
+
+      <h2>Sharing a Post</h2>
+      <p>To share a post, look for the <strong>"Share Post"</strong> button located below the post content.</p>
+      <p>Clicking this button will give you options to share the post via a direct link or on social media platforms such as Facebook, Twitter, or Instagram.</p>
+      <p>Sharing your post helps to reach a wider audience and engage more users in the conversation!</p>
+    </div>
+  </section>
+</div>

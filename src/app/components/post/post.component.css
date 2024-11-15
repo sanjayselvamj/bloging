@@ -1,0 +1,26 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.search-box {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* Image Preview Styling */
+.img-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Video Preview Styling */
+video {
+  display: block;
+  max-width: 100%;
+}

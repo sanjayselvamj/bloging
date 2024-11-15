@@ -1,0 +1,59 @@
+<section class="contact-section py-5">
+  <div class="container">
+    <h1 class="text-center mb-4">Contact Us</h1>
+    <p class="text-center mb-4">We would love to hear from you! Please send us your message below.</p>
+
+
+
+    <!-- Contact Form -->
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mx-auto col-12 col-md-8 col-lg-6">
+      <!-- Name Input -->
+      <div class="form-group mb-3">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" class="form-control"
+               [ngClass]="{'is-invalid': contactForm.get('name')?.invalid && contactForm.get('name')?.touched}">
+        <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="invalid-feedback">
+          Name is required and should be at least 3 characters long.
+        </div>
+      </div>
+
+      <!-- Email Input -->
+      <div class="form-group mb-3">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control"
+               [ngClass]="{'is-invalid': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}">
+        <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="invalid-feedback">
+          <ng-container *ngIf="contactForm.get('email')?.errors?.['required']">
+            Email is required.
+          </ng-container>
+          <ng-container *ngIf="contactForm.get('email')?.errors?.['email']">
+            Please enter a valid email.
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- Message Input -->
+      <div class="form-group mb-3">
+        <label for="message">Message</label>
+        <textarea id="message" formControlName="message" class="form-control" rows="5"
+                  [ngClass]="{'is-invalid': contactForm.get('message')?.invalid && contactForm.get('message')?.touched}"></textarea>
+        <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="invalid-feedback">
+          Message is required and should be at least 10 characters long.
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary w-100" [disabled]="contactForm.invalid">Send Message</button>
+
+
+      <!-- Form Feedback Message -->
+    <div *ngIf="formMessage" class="alert text-center  mt-5"
+    [ngClass]="{
+      'text-success': formMessage.includes('success'),
+      'text-danger': formMessage.includes('error')
+    }">
+ {{ formMessage }}
+</div>
+    </form>
+  </div>
+</section>

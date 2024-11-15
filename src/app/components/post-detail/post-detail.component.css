@@ -1,0 +1,260 @@
+/* Base styling for the post container */
+.post-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Styling for the post title */
+.post-title {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Responsive media container for images/videos */
+.media-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Limit maximum width of the video */
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Styling for the image */
+.post-image {
+  max-width: 100%;
+  max-height: 50vh; /* Set a height limit */
+  width: auto;
+  height: auto;
+  object-fit: cover; /* Ensures the image doesn't stretch */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Styles for the media container */
+.media-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Limit maximum width of the video */
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Styles for the video element */
+.post-video {
+  width: 100%;
+  height: auto;
+  max-height: 450px; /* Adjust max height if necessary */
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+
+/* Hover effect for media */
+.media-container:hover img,
+.media-container:hover video {
+  transform: scale(1.05);
+}
+
+/* Styling for post text */
+.card-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Styling for Read More/Read Less link */
+.read-more-link {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
+}
+
+/* Styling for comments section */
+.comment {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* Like section */
+.like-section {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Button container */
+.button-container {
+
+padding: 0;
+}
+/* Default styles */
+.new {
+  margin-left: 200px;
+}
+
+.new1 {
+  margin-right: 200px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) { /* For screens smaller than 768px, typical mobile size */
+  .new {
+    margin-left: 20px; /* Reduced margin for smaller screens */
+
+  }
+
+  .new1 {
+    margin-right: 20px; /* Reduced margin for smaller screens */
+  }
+}
+
+
+/* Like button styling */
+.like-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s;
+  margin-right: auto; /* Aligns the Like button to the left */
+}
+
+/* Submit button styling */
+.submit-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto; /* Aligns the Submit button to the right */
+}
+
+
+
+.like-button:hover {
+  color: #0056b3;
+}
+
+.like-count {
+  margin-right: 8px;
+}
+
+.like-button mat-icon {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.like-button:hover mat-icon {
+  transform: rotate(20deg);
+}
+
+/* Submit button styling */
+
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+  .post-container {
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .post-title {
+    font-size: 1.75rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .like-button,
+  .submit-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .post-title {
+    font-size: 1.5rem;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
+  }
+}
+.comments-container {
+  max-height: 150px; /* Set the height to 50px */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+.comment {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+/* Initially hidden comments */
+.hidden-comment {
+  opacity: 0;
+}
+
+.btn-danger {
+  font-family: Arial, sans-serif; /* Change this to your desired font */
+  font-size: 12px; /* Adjust font size */
+  font-weight: bold; /* Make it bold */
+}
+.delete-btn {
+  background-color: transparent;  /* Remove button background */
+  border: none;                   /* Remove button border */
+  cursor: pointer;                /* Show pointer on hover */
+  padding: 6px;                   /* Add padding for click area */
+  display: inline-flex;           /* Align icon inside button */
+  align-items: center;            /* Center icon vertically */
+  justify-content: center;
+  transition: transform 0.3s, opacity 0.3s; /* Smooth transition */
+}
+
+.delete-btn:hover {
+  transform: scale(1.1);          /* Slight zoom on hover */
+  opacity: 0.7;                   /* Slight transparency on hover */
+}
+
+.delete-icon {
+  width: 18px;                    /* Icon size */
+  height: 18px;
+  display: block;                 /* Prevents unwanted space around icon */
+}

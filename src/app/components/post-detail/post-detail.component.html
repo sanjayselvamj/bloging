@@ -1,0 +1,82 @@
+<div *ngIf="post" class="post-container">
+  <!-- Post Title -->
+  <h1 class="post-title">{{ post.title }}</h1>
+
+  <!-- Display Image -->
+  <div *ngIf="post.image_url" class="media-container">
+    <img [src]="getFullUrl(post.image_url)" alt="Post Image" class="img-fluid post-image">
+  </div>
+
+  <!-- Display Video -->
+  <div *ngIf="post.video_url" class="media-container">
+    <video [src]="getFullUrl(post.video_url)" controls class="video-fluid mt-3 post-video"></video>
+  </div>
+
+  <!-- Post Text Content -->
+  <div class="card-body">
+    <p class="card-text">
+      {{ post.text_content ? (isTextExpanded ? post.text_content : post.text_content.slice(0, 100)) : '' }}
+      <a *ngIf="post.text_content && post.text_content.length > 100" (click)="expandText()" class="read-more-link">
+        {{ isTextExpanded ? 'Read Less' : 'Read More' }}
+      </a>
+    </p>
+
+    <!-- Toggle Comments Button -->
+    <button class="btn btn-link p-0" (click)="toggleCommentSection(); $event.stopPropagation()">
+      {{ showComments ? 'Hide Comments' : 'Show Comments' }}
+
+    </button>
+    <p   class="fw-bolder" *ngIf="comments.length > 0">{{ comments.length }} Comment{{ comments.length > 1 ? 's' : '' }}</p>
+
+    <div *ngIf="showComments" class="comments-container">
+      <!-- Display the number of comments -->
+
+      <p *ngIf="comments.length === 0">No comments yet.</p>
+
+      <div *ngIf="comments.length > 0">
+        <div *ngFor="let comment of comments" class="comment mb-2 d-flex justify-content-between align-items-start">
+          <div>
+            <p>
+              <strong>{{ comment.username || 'Anonymous' }}:</strong>
+              {{ comment.content || 'No content' }}
+            </p>
+          </div>
+
+          <!-- Delete Button -->
+          <button *ngIf="(currentUser?.username === comment.username || currentUser?.username === post?.owner)"
+                  (click)="comment.id !== undefined ? deleteComment(comment.username, comment.id) : null"
+                  class="delete-btn">
+            <img src="../../../assets/icon/delete.png" alt="Delete icon" class="delete-icon">
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-2">
+        <textarea #commentInput [(ngModel)]="newComment" class="form-control" placeholder="Add a comment..."></textarea>
+      </div>
+    </div>
+
+
+  <!-- Like Button -->
+  <div class="card-footer text-center like-section">
+    <div class="button-container">
+      <!-- Like Button -->
+      <div class="row">
+        <div class="col text-start new1">
+          <button class="like-button" (click)="toggleLike(post)" (mouseenter)="post.hovering = true" (mouseleave)="post.hovering = false">
+            <span class="like-count">{{ post.likes }} Likes</span>
+            <mat-icon *ngIf="!post.hovering">thumb_up</mat-icon>
+            <mat-icon *ngIf="post.hovering">favorite</mat-icon>
+          </button>
+        </div>
+
+        <div class="col text-end new">
+          <!-- Submit Button -->
+          <button class="submit-button" (click)="submitComment()" [disabled]="!newComment.trim()">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

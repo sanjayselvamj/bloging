@@ -1,0 +1,55 @@
+/* Custom styles for the logo */
+.logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar background and shadow */
+.navbar {
+  background-color: #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar title responsive */
+.navbar-text {
+  font-size: 1.5rem;
+  margin-left: 15px;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar-text {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive Navbar links */
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  color: #ffffff;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+
+/* Sticky navbar */
+.navbar.fixed-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}

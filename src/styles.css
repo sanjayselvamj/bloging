@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+    font-family: 'Material Icons';
+    src: url('/assets/fonts/material-icons.woff2') format('woff2'),
+         url('/assets/fonts/material-icons.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    font-size: 24px; /* Adjust as needed */
+    display: inline-block;
+    text-align: center;
+    text-transform: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }@font-face {
+    font-family: 'Material Icons';
+    src: url('https://fonts.gstatic.com/s/materialicons/v142/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Use swap for faster font display */
+  }
+  
+
+  .success-message {
+    color: green;
+    margin-top: 16px;
+  }
+  

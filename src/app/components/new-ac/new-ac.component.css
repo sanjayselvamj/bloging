@@ -1,0 +1,102 @@
+/* Password toggle button */
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #aaa; /* Adjust color for better visibility */
+}
+
+/* Login container styling */
+.login-container {
+  background-image: url('../../../assets/img/blog.jpg'); /* Replace with correct path */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Login card styling */
+.login-card {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure the card is responsive */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+}
+
+/* Profile image styling */
+.profile-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.profile-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Login button styling */
+.login-btn {
+  width: 100%;
+  background-color: #f5faff;
+  border: none;
+  color: #007bff;
+  border-radius: 50px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #81888e;
+}
+
+/* Responsive design for login button */
+@media (max-width: 768px) {
+  .login-btn {
+    margin-left: 0; /* Remove margin on small screens */
+  }
+}
+
+/* Link styles for signup and help links */
+.signup-link .btn-link,
+.help-link .btn-link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.signup-link .btn-link:hover,
+.help-link .btn-link:hover {
+  color: #0056b3; /* Darker hover color for emphasis */
+  text-decoration: underline;
+}

@@ -1,0 +1,77 @@
+
+  <!-- Search Input on the Right -->
+  <div class="search-top-right">
+    <input
+      type="text"
+      class="form-control search-input"
+      placeholder="Search posts..."
+      (input)="searchPosts($event)"
+    />
+  </div>
+
+
+<div *ngFor="let post of filteredPosts" class="post mb-4 mt-5">
+  <!-- Post Card -->
+  <div class="card shadow-sm">
+    <!-- Title at the Top -->
+    <div class="card-header text-dark bg-light d-flex justify-content-between align-items-center">
+      <!-- Title with click event -->
+      <span class="username text-muted">{{ '@' + post.username }}</span>
+
+      <h5 class="card-title text-center mb-0 flex-grow-1" (click)="viewPost(post.id); $event.stopPropagation()">
+        {{ post.title || 'Untitled' }}
+      </h5>
+
+      <div class="dropdown" (click)="$event.stopPropagation()">
+        <button
+          class="btn btn-light btn-sm p-0 dots-button"
+          type="button"
+          (click)="toggleDropdown(post.id, $event)">
+          <img src="../../../assets/icon/dots.png" alt="More Options" class="icon-dots">
+        </button>
+
+        <!-- Dropdown Menu -->
+         <div class=" move">
+        <ul class="dropdown-menu dropdown-menu-end custom-dropdown-menu" *ngIf="dropdownOpenPostId === post.id">
+          <li>
+            <a class="dropdown-item" (click)="deletePost(post.id); dropdownOpenPostId = null">
+              <img src="../../../assets/icon/delete.png" alt="Delete" class="icon-action"> Delete
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" (click)="toggleShareMenu(post.id.toString())">
+              <img src="../../../assets/icon/share.png" alt="Delete" class="icon-action"> share            </a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </div>
+
+    <!-- Full-size Image or Video -->
+    <div class="media-container">
+      <img *ngIf="post.image_url" [src]="post.image_url" alt="Post Image" class="card-img-top img-fluid" loading="lazy" />
+      <video *ngIf="post.video_url" [src]="post.video_url" controls class="video-fluid mt-2" loading="lazy">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Card Body with Post Text -->
+    <div class="card-body">
+      <p class="card-text">
+        {{ post.text_content ? (isTextExpanded ? post.text_content : post.text_content.slice(0, 100)) : '' }}
+        <a *ngIf="post.text_content && post.text_content.length > 100" (click)="expandText()" class="read-more-link">
+          {{ isTextExpanded ? 'Read Less' : 'Read More' }}
+        </a>
+      </p>
+    </div>
+
+    <!-- Card Footer for Like button -->
+
+  </div>
+</div>
+
+
+
+
+
+

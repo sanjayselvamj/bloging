@@ -1,0 +1,77 @@
+<div class="container mt-5 mb-5">
+  <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)" class="needs-validation" novalidate>
+    <!-- Post Title -->
+    <div class="form-group">
+      <label for="title">Title <span class="text-danger">*</span></label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="newPost.title"
+        name="title"
+        required
+        placeholder="Enter post title"
+      />
+      <div class="invalid-feedback">Title is required</div>
+    </div>
+
+    <!-- Post Text Content -->
+    <div class="form-group">
+      <label for="text_content">Text Content</label>
+      <textarea
+        class="form-control"
+        id="text_content"
+        [(ngModel)]="newPost.text_content"
+        name="text_content"
+        placeholder="Enter text content (optional)"
+      ></textarea>
+    </div>
+
+    <!-- Image Upload -->
+    <div class="form-group">
+      <label for="image">Upload Image (optional)</label>
+      <input
+        type="file"
+        class="form-control-file"
+        id="image"
+        (change)="onFileChange($event, 'image')"
+        accept="image/*"
+      />
+      <img *ngIf="imagePreview" [src]="imagePreview" alt="Image Preview" class="img-thumbnail mt-2" style="max-height: 200px;" />
+    </div>
+
+    <!-- Video Upload -->
+    <div class="form-group">
+      <label for="video">Upload Video (optional)</label>
+      <input
+        type="file"
+        class="form-control-file"
+        id="video"
+        (change)="onFileChange($event, 'video')"
+        accept="video/*"
+      />
+      <video *ngIf="videoPreview" controls class="mt-2" style="max-width: 100%; height: auto;">
+        <source [src]="videoPreview" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!postForm.form.valid">
+      Create Post
+    </button>
+  </form>
+
+  <!-- Error Message -->
+  <!-- Error Message -->
+<!-- Error Message -->
+<p *ngIf="errorMessage" class="text-danger mt-3">{{ errorMessage }}</p>
+
+<!-- Success Message -->
+<p *ngIf="successMessage" class="text-success mt-3">{{ successMessage }}</p>
+
+
+
+  <!-- Search Box -->
+
+</div>

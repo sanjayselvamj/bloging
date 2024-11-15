@@ -1,0 +1,32 @@
+<!-- Include Material Icons in your HTML file -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="share-bottom-sheet">
+  <div class="share-card">
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ getPostUrl(postId) }}" target="_blank" aria-label="Share on Facebook">
+      <img src="../../../assets/icon/facebook.png" alt="Facebook">
+    </a>
+    <span>Facebook</span>
+  </div>
+
+  <div class="share-card">
+    <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20post!&url={{ getPostUrl(postId) }}" target="_blank" aria-label="Share on Twitter">
+      <img src="../../../assets/icon/share.png" alt="Twitter">
+    </a>
+    <span>Twitter</span>
+  </div>
+
+  <div class="share-card">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ getPostUrl(postId) }}" target="_blank" aria-label="Share on LinkedIn">
+      <img src="../../../assets/icon/message.png" alt="LinkedIn">
+    </a>
+    <span>LinkedIn</span>
+  </div>
+
+  <div class="share-card">
+    <a href="https://api.whatsapp.com/send?text=Check out this post! {{ getPostUrl(postId) }}" target="_blank" aria-label="Share on WhatsApp">
+      <img src="../../../assets/icon/whatsapp.png" alt="WhatsApp">
+    </a>
+    <span>WhatsApp</span>
+  </div>
+</div>
